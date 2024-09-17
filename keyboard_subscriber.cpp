@@ -7,7 +7,7 @@ class KeyboardSubscriber : public rclcpp::Node
 {
 public:
   KeyboardSubscriber()
-  : Node("minimal_subscriber")
+  : Node("keyboard_subscriber")
   {
     auto keyboard_data_callback =
       [this](std_msgs::msg::String::UniquePtr msg) -> void {

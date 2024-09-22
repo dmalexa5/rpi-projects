@@ -37,9 +37,9 @@ public:
       [this]() -> void {
         
         std::string user_input;
-        std::cout << "Enter a number to publish: ";
+        std::cout << ">>> ";
         std::getline(std::cin, user_input);
-        int value;
+        /*int value;
         
         value = get_valid_num(user_input);
         
@@ -47,12 +47,12 @@ public:
           std::cout << "Please enter a value between 0 and 180 \n";
           return;
         }
-        
+        */
         auto message = std_msgs::msg::String();
-        user_input = std::to_string(value);
+        // user_input = std::to_string(value);
         
-        message.data =  user_input + "  at count: " + std::to_string(this->count_++);
-        RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", message.data.c_str());
+        message.data =  user_input; //+ "  at count: " + std::to_string(this->count_++);
+        RCLCPP_INFO(this->get_logger(), "%s", message.data.c_str());
         this->publisher_->publish(message);
       };
     timer_ = this->create_wall_timer(100ms, timer_callback);

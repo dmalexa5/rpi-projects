@@ -1,2 +1,2 @@
 # rpi-projects
-Personal raspberry pi &amp; ros2 miscellaneous code
+Personal raspberry pi and ros2 miscellaneous code
